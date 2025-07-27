@@ -143,6 +143,27 @@
       }
     }
   </style>
+  <style>
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 999;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: var(--primary-color);
+      color: white;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    #scrollTopBtn:hover {
+      background-color: var(--accent-color);
+    }
+  </style>
 </head>
 <body>
 
@@ -159,9 +180,9 @@
   <p>Email: <a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
   <p>Phone: +91-9727772090</p>
   <p>
-    <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/dhrumil-soni-th" target="_blank">GitHub</a>
-  </p>
+  <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank" style="margin: 0 10px;"><i class="fab fa-linkedin fa-2x" style="color: #e3f2fd;"></i></a>
+  <a href="https://github.com/dhrumil-soni-th" target="_blank" style="margin: 0 10px;"><i class="fab fa-github fa-2x" style="color: #e3f2fd;"></i></a>
+</p>
 </header>
 
 <section data-aos="fade-up">
@@ -229,31 +250,7 @@
       <p>Telecom E2E test design and backend validation</p>
     </div>
   </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);">
-      <h3><i class="fas fa-video"></i> <a href="https://tlynt.com/" target="_blank">TLYNT</a></h3>
-      <p>$1</p>
     </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);">
-      <h3><i class="fas fa-credit-card"></i> <a href="https://www.deposyt.com/" target="_blank">Deposyt</a></h3>
-      <p>$1</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);">
-      <h3><i class="fas fa-chalkboard-teacher"></i> <a href="https://www.veriday.com/digital-agent/" target="_blank">Digital Agent (Veriday)</a></h3>
-      <p>$1</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);">
-      <h3><i class="fas fa-wallet"></i> <a href="https://dividebuy.co.uk/" target="_blank">DivideBuy</a></h3>
-      <p>$1</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);">
-      <h3><i class="fas fa-cubes"></i> <a href="https://www.splunk.com/" target="_blank">Splunk Add-Ons</a></h3>
-      <p>$1</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);">
-      <h3><i class="fas fa-network-wired"></i> <a href="https://www.att.com/" target="_blank">AT&T HALO</a></h3>
-      <p>$1</p>
-    </div>
-  </div>
 </section>
 
 <section data-aos="fade-up">
@@ -264,6 +261,12 @@
 
 <section data-aos="fade-up">
   <h2>Certifications & Awards</h2>
+  <ul>
+    <li>🏆 BRAVO Award (2×) – Test Execution & Sales Platform Automation</li>
+    <li>🏅 POB Award – Planning & Delivery Excellence</li>
+    <li>⭐ KUDOS Award – Splunk Add-On Delivery</li>
+    <li><img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS" width="25" style="vertical-align:middle; margin-right:8px;"> AWS Certified AI Practitioner</li>
+  </ul>
   <ul>
     <li>🏆 BRAVO Award (2×) – Test Execution & Sales Platform Automation</li>
     <li>🏅 POB Award – Planning & Delivery Excellence</li>
@@ -311,6 +314,17 @@
     const sections = document.querySelectorAll('section');
     sections.forEach(sec => sec.style.backgroundColor = darkMode ? '#1e1e1e' : '#fff');
     toggleBtn.textContent = darkMode ? '☀️ Light Mode' : '🌙 Toggle Theme';
+  });
+</script>
+<button id="scrollTopBtn" title="Go to top">⬆️</button>
+
+<script>
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function () {
+    scrollBtn.style.display = document.documentElement.scrollTop > 200 ? "block" : "none";
+  };
+  scrollBtn.addEventListener("click", function () {
+    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
   });
 </script>
 </body>
