@@ -1,149 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/44724153?s=64&v=4">
-  <meta name="description" content="Dhrumil Soni - Lead QA & Context Driven Tester">
-  <meta property="og:title" content="Dhrumil Soni - QA Portfolio">
-  <meta property="og:description" content="Lead QA & Context Driven Tester with 10+ years of experience in Automation and Manual Testing">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/44724153?s=400&v=4">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#1e88e5">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dhrumil Soni - QA Engineer Portfolio" />
+  <meta property="og:title" content="Dhrumil Soni - Lead QA & Context Driven Tester" />
+  <meta property="og:image" content="https://dhrumil-soni-th.github.io/assets/preview.png" />
+  <meta property="og:url" content="https://dhrumil-soni-th.github.io" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <title>Dhrumil Soni - QA Portfolio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pV+zVAVIJrBZnWxUbdEkGb0uZyNkEyDXRhGEV4OQoXYc1iFv7YdOC5HOeFIVbZs7jsMEZTWVJqZg5w1hTyd6CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #1e88e5;
-      --accent-color: #1565c0;
-      --background-color: #f9f9f9;
-      --text-color: #333;
-      --white: #fff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background-color: var(--background-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color, #fff);
+      color: var(--text-color, #000);
+      margin: 0;
+      padding: 0 20px;
     }
-
     header {
-      background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-      color: var(--white);
       text-align: center;
-      padding: 60px 20px;
-      border-radius: 12px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 50px 0;
+      background-color: #1976d2;
+      color: white;
     }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: 600;
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
     }
-
-    header p,
-    header a {
-      font-size: 1.1rem;
-      color: #e3f2fd;
-      margin-top: 8px;
-    }
-
     section {
-      background: var(--white);
-      padding: 30px;
-      margin-bottom: 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    section h2 {
-      color: var(--primary-color);
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      position: relative;
-    }
-
-    section h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: var(--accent-color);
-      margin-top: 8px;
-    }
-
-    section h3 {
-      color: var(--accent-color);
-      margin-top: 20px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    ul li::before {
-      content: '\f111';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      margin-right: 10px;
-      color: var(--primary-color);
-    }
-
-    ul li {
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
-    a {
-      color: var(--white);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
+      margin: 40px auto;
+      background: #f8f9fa;
       padding: 20px;
+      border-radius: 10px;
+    }
+    h2 {
+      color: #1976d2;
+      border-bottom: 2px solid #1976d2;
+      padding-bottom: 6px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
       background: #e3f2fd;
-      margin-top: 40px;
       border-radius: 12px;
-      color: #555;
+      padding: 20px;
+      text-align: center;
     }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      section {
-        padding: 20px;
-      }
+    .project-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 10px;
     }
-  </style>
-  <style>
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #424242;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
     #scrollTopBtn {
       display: none;
       position: fixed;
@@ -153,36 +85,45 @@
       font-size: 18px;
       border: none;
       outline: none;
-      background-color: var(--primary-color);
+      background-color: #1976d2;
       color: white;
       cursor: pointer;
       padding: 12px 16px;
       border-radius: 50%;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
-    #scrollTopBtn:hover {
-      background-color: var(--accent-color);
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      .theme-toggle {
+        left: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- AOS Animation Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1000 });
 </script>
 
-<header data-aos="fade-down">
+<div class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</div>
+
+<header data-aos="fade-down" style="position: relative;">
   <h1>Dhrumil Soni</h1>
   <p>Sr. QA Engineer (Manual + Automation)</p>
   <p>Ahmedabad, Gujarat</p>
-  <p>Email: <a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
+  <p>Email: <a href="mailto:dksoni0812@gmail.com" style="color:white;">dksoni0812@gmail.com</a></p>
   <p>Phone: +91-9727772090</p>
-  <p>
-  <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank" style="margin: 0 10px;"><i class="fab fa-linkedin fa-2x" style="color: #e3f2fd;"></i></a>
-  <a href="https://github.com/dhrumil-soni-th" target="_blank" style="margin: 0 10px;"><i class="fab fa-github fa-2x" style="color: #e3f2fd;"></i></a>
-</p>
+  <div style="position:absolute; top:20px; right:20px; display:flex; gap:12px;">
+    <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin fa-2x" style="color:#fff;"></i>
+    </a>
+    <a href="https://github.com/dhrumil-soni-th" target="_blank" aria-label="GitHub">
+      <i class="fab fa-github fa-2x" style="color:#fff;"></i>
+    </a>
+  </div>
 </header>
 
 <section data-aos="fade-up">
@@ -191,72 +132,9 @@
 </section>
 
 <section data-aos="fade-up">
-  <h2>Skills</h2>
-  <h3>Testing Tools & Frameworks</h3>
-  <ul>
-    <li>Playwright (TS), WebdriverIO, Selenium, Cucumber</li>
-    <li>Postman, SOAP UI, TestRail, JIRA, QATouch, Zebrunner</li>
-  </ul>
-  <h3>Testing Types</h3>
-  <ul>
-    <li>Manual Testing, Functional, GUI, Regression, UAT</li>
-    <li>API Testing, System, Compatibility, Ad-hoc</li>
-  </ul>
-  <h3>Soft Skills</h3>
-  <ul>
-    <li>Team leadership & mentoring</li>
-    <li>Client communication</li>
-    <li>Test strategy & planning</li>
-    <li>Interviewing candidates</li>
-  </ul>
-</section>
-
-<section data-aos="zoom-in">
-  <h2>Projects</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-align: center;">
-      <img src="https://www.hometownticketing.com/wp-content/uploads/2022/08/HTT-Logo-Full-Color.png" alt="Hometown Logo" width="100">
-      <h3><i class="fas fa-code"></i> <a href="https://www.hometownticketing.com/" target="_blank">Hometown Website Builder</a></h3>
-      <p>Ticketing + CMS automation using Playwright + TS</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-align: center;">
-      <img src="https://tlynt.com/assets/img/tlynt-logo.png" alt="TLYNT Logo" width="100">
-      <h3><i class="fas fa-video"></i> <a href="https://tlynt.com/" target="_blank">TLYNT</a></h3>
-      <p>Media automation using WebdriverIO</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-align: center;">
-      <img src="https://www.deposyt.com/wp-content/uploads/2023/11/DeposytLogo_WhiteText-1.png" alt="Deposyt Logo" width="100">
-      <h3><i class="fas fa-credit-card"></i> <a href="https://www.deposyt.com/" target="_blank">Deposyt</a></h3>
-      <p>CMS + Payment Gateway testing manually</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-align: center;">
-      <img src="https://www.veriday.com/wp-content/uploads/2023/01/Veriday-logo-white-text.png" alt="Veriday Logo" width="100">
-      <h3><i class="fas fa-chalkboard-teacher"></i> <a href="https://www.veriday.com/digital-agent/" target="_blank">Digital Agent (Veriday)</a></h3>
-      <p>CMS automation, framework migration, Cucumber + Jenkins</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-align: center;">
-      <img src="https://www.dividebuy.co.uk/wp-content/themes/dividebuy/assets/img/logo.svg" alt="DivideBuy Logo" width="100">
-      <h3><i class="fas fa-wallet"></i> <a href="https://dividebuy.co.uk/" target="_blank">DivideBuy</a></h3>
-      <p>Fintech manual + automation testing with microservices</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-align: center;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Splunk_logo.svg" alt="Splunk Logo" width="100">
-      <h3><i class="fas fa-cubes"></i> <a href="https://www.splunk.com/" target="_blank">Splunk Add-Ons</a></h3>
-      <p>15+ add-ons tested, SNOW, MSCS, Office365, etc.</p>
-    </div>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-align: center;">
-      <img src="https://1000logos.net/wp-content/uploads/2021/11/ATT-Logo.png" alt="AT&T Logo" width="100">
-      <h3><i class="fas fa-network-wired"></i> <a href="https://www.att.com/" target="_blank">AT&T HALO</a></h3>
-      <p>Telecom E2E test design and backend validation</p>
-    </div>
-  </div>
-    </div>
-</section>
-
-<section data-aos="fade-up">
   <h2>Resume</h2>
   <p>You can download my resume using the button below:</p>
-  <a href="https://github.com/dhrumil-soni-th/resume/raw/main/Dhrumil_Soni_Lead_QA_Resume.pdf" download style="display:inline-block;margin-top:10px;padding:10px 20px;background:#1e88e5;color:#fff;border-radius:6px;text-decoration:none;">⬇️ Download Resume</a>
+  <a href="resume/Dhrumil_Soni_Resume.pdf" download class="btn">⬇️ Download Resume</a>
 </section>
 
 <section data-aos="fade-up">
@@ -270,50 +148,37 @@
 </section>
 
 <section data-aos="fade-up">
-  <h2>Education</h2>
-  <ul>
-    <li>B.E in Electronics & Communication – LDRP, Gandhinagar (82.40%)</li>
-    <li>12th: 87.36% (GSEB) | 10th: 91.85% (GSEB)</li>
-  </ul>
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="assets/hometown.png" alt="Hometown Logo">
+      <h3><a href="#" target="_blank">Hometown Website Builder</a></h3>
+      <p>Ticketing + CMS automation using Playwright + TS</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/tlynt.png" alt="TLYNT Logo">
+      <h3><a href="#" target="_blank">TLYNT</a></h3>
+      <p>Media automation using WebdriverIO</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/deposyt.png" alt="Deposyt Logo">
+      <h3><a href="https://www.deposyt.com" target="_blank">Deposyt</a></h3>
+      <p>CMS + Payment Gateway testing manually</p>
+    </div>
+    <!-- Add more cards similarly -->
+  </div>
 </section>
 
-<section data-aos="fade-up">
-  <h2>Personal Info</h2>
-  <p><strong>Date of Birth:</strong> 08 Dec 1991</p>
-  <p><strong>Languages:</strong> English, Hindi, Gujarati</p>
-  <p><strong>Hobbies:</strong> Cricket, Trekking, Reading, Cycling</p>
-</section>
-
-<section data-aos="fade-up" id="contact">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/mjvnvjle" method="POST" style="display:flex;flex-direction:column;gap:10px;max-width:500px;margin:auto;">
-    <input type="text" name="name" placeholder="Your Name" required style="padding:10px;border-radius:6px;border:1px solid #ccc;">
-    <input type="email" name="email" placeholder="Your Email" required style="padding:10px;border-radius:6px;border:1px solid #ccc;">
-    <textarea name="message" placeholder="Your Message" rows="5" required style="padding:10px;border-radius:6px;border:1px solid #ccc;"></textarea>
-    <button type="submit" style="background:#1e88e5;color:#fff;padding:10px;border:none;border-radius:6px;cursor:pointer;">Send Message</button>
-  </form>
-</section>
-
-<footer data-aos="fade-up">
-  <p>© 2025 Dhrumil Soni | QA Portfolio</p>
-</footer>
-<button id="toggle-theme" style="position:fixed;top:20px;right:20px;padding:10px;border:none;border-radius:6px;background:#1e88e5;color:white;cursor:pointer;z-index:999;">🌙 Toggle Theme</button>
-
-<script>
-  const toggleBtn = document.getElementById('toggle-theme');
-  let darkMode = false;
-  toggleBtn.addEventListener('click', () => {
-    darkMode = !darkMode;
-    document.body.style.backgroundColor = darkMode ? '#121212' : '#f9f9f9';
-    document.body.style.color = darkMode ? '#f1f1f1' : '#333';
-    const sections = document.querySelectorAll('section');
-    sections.forEach(sec => sec.style.backgroundColor = darkMode ? '#1e1e1e' : '#fff');
-    toggleBtn.textContent = darkMode ? '☀️ Light Mode' : '🌙 Toggle Theme';
-  });
-</script>
 <button id="scrollTopBtn" title="Go to top">⬆️</button>
 
 <script>
+  function toggleTheme() {
+    const root = document.documentElement;
+    const darkMode = root.style.getPropertyValue('--bg-color') === '#121212';
+    root.style.setProperty('--bg-color', darkMode ? '#ffffff' : '#121212');
+    root.style.setProperty('--text-color', darkMode ? '#000000' : '#ffffff');
+  }
+
   const scrollBtn = document.getElementById("scrollTopBtn");
   window.onscroll = function () {
     scrollBtn.style.display = document.documentElement.scrollTop > 200 ? "block" : "none";
@@ -322,5 +187,6 @@
     document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
   });
 </script>
+
 </body>
 </html>
