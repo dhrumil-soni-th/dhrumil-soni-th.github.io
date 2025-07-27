@@ -165,11 +165,36 @@
       margin-top: 10px;
       display: none;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
+    .footer {
       background-color: #1976d2;
       color: white;
+      padding: 20px 0;
+    }
+    .footer .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-text {
+      font-size: 14px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+    .footer-social .social-link {
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    .footer-social .social-link:hover {
+      color: #ffc107;
     }
     #experience ul.cert-list li {
       background: #e3f2fd;
@@ -353,29 +378,29 @@ modules of the applications involved in the End-to-End flow</li>
 </section>
 <!-- Footer -->
 <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-text">
-            <p>&copy; 2025 Dhrumil Soni. All rights reserved.</p>
-          </div>
-          <div class="footer-social">
-            <a
-              href="https://www.linkedin.com/in/dhrumil-soni-qa812/"
-              target="_blank"
-              class="social-link"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a
-              href="https://github.com/dhrumil-soni-th"
-              target="_blank"
-              class="social-link"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>&copy; 2025 Dhrumil Soni. All rights reserved.</p>
+        </div>
+        <div class="footer-social">
+          <a
+            href="https://www.linkedin.com/in/dhrumil-soni-qa812/"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/dhrumil-soni-th"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
         </div>
       </div>
+    </div>
 </footer>
 <script>
     document.getElementById('contactForm').addEventListener('submit', async function (e) {
