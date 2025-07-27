@@ -12,10 +12,16 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link rel="icon" href="favicon.ico" />
   <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --card-bg: #e3f2fd;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color, #fff);
-      color: var(--text-color, #000);
+      background-color: var(--bg-color);
+      color: var(--text-color);
       margin: 0;
       padding: 0 20px;
     }
@@ -55,7 +61,7 @@
       gap: 20px;
     }
     .project-card {
-      background: #e3f2fd;
+      background: var(--card-bg);
       border-radius: 12px;
       padding: 20px;
       text-align: center;
@@ -151,49 +157,49 @@
     <div class="project-card">
       <a href="https://www.hometownticketing.com" target="_blank">
         <img src="assets/hometown.png" alt="Hometown Logo">
-        <h3>Hometown Website Builder</h3>
+        <h3 style="color: var(--text-color);">Hometown Website Builder</h3>
       </a>
       <p>Ticketing + CMS automation using Playwright + TS</p>
     </div>
     <div class="project-card">
       <a href="https://www.tlynt.com" target="_blank">
         <img src="assets/tlynt.png" alt="TLYNT Logo">
-        <h3>TLYNT</h3>
+        <h3 style="color: var(--text-color);">TLYNT</h3>
       </a>
       <p>Media automation using WebdriverIO</p>
     </div>
     <div class="project-card">
       <a href="https://www.deposyt.com" target="_blank">
         <img src="assets/deposyt.png" alt="Deposyt Logo">
-        <h3>Deposyt</h3>
+        <h3 style="color: var(--text-color);">Deposyt</h3>
       </a>
       <p>CMS + Payment Gateway testing manually</p>
     </div>
     <div class="project-card">
       <a href="https://www.veriday.com" target="_blank">
         <img src="assets/veriday.png" alt="Veriday Logo">
-        <h3>Digital Agent (Veriday)</h3>
+        <h3 style="color: var(--text-color);">Digital Agent (Veriday)</h3>
       </a>
       <p>CMS automation, framework migration, Cucumber + Jenkins</p>
     </div>
     <div class="project-card">
       <a href="https://www.dividebuy.co.uk" target="_blank">
         <img src="assets/dividebuy.png" alt="DivideBuy Logo">
-        <h3>DivideBuy</h3>
+        <h3 style="color: var(--text-color);">DivideBuy</h3>
       </a>
       <p>Fintech manual + automation testing with microservices</p>
     </div>
     <div class="project-card">
       <a href="https://www.splunk.com" target="_blank">
         <img src="assets/splunk.png" alt="Splunk Logo">
-        <h3>Splunk Add-Ons</h3>
+        <h3 style="color: var(--text-color);">Splunk Add-Ons</h3>
       </a>
       <p>15+ add-ons tested, SNOW, MSCS, Office365, etc.</p>
     </div>
     <div class="project-card">
       <a href="https://www.att.com" target="_blank">
         <img src="assets/att.png" alt="AT&T Logo">
-        <h3>AT&T HALO</h3>
+        <h3 style="color: var(--text-color);">AT&T HALO</h3>
       </a>
       <p>Telecom E2E test design and backend validation</p>
     </div>
@@ -205,9 +211,10 @@
 <script>
   function toggleTheme() {
     const root = document.documentElement;
-    const darkMode = root.style.getPropertyValue('--bg-color') === '#121212';
-    root.style.setProperty('--bg-color', darkMode ? '#ffffff' : '#121212');
-    root.style.setProperty('--text-color', darkMode ? '#000000' : '#ffffff');
+    const isDark = root.style.getPropertyValue('--bg-color') === '#121212';
+    root.style.setProperty('--bg-color', isDark ? '#ffffff' : '#121212');
+    root.style.setProperty('--text-color', isDark ? '#000000' : '#ffffff');
+    root.style.setProperty('--card-bg', isDark ? '#e3f2fd' : '#2c2c2c');
   }
 
   const scrollBtn = document.getElementById("scrollTopBtn");
