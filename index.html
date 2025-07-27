@@ -17,7 +17,6 @@
       --text-color: #000000;
       --card-bg: #e3f2fd;
     }
-
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: var(--bg-color);
@@ -41,20 +40,74 @@
       text-decoration: none;
       margin-left: 20px;
       font-weight: bold;
+      position: relative;
+    }
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      height: 2px;
+      width: 100%;
+      background-color: yellow;
     }
     .hero {
-      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       padding: 80px 20px 40px;
-      background: #1976d2;
-      color: white;
+      background: #f8f9fa;
+      color: #333;
     }
-    .hero h1 {
-      font-size: 3em;
+    .hero-content {
+      max-width: 500px;
+      text-align: left;
+      margin: 20px;
+    }
+    .hero-content h1 {
+      font-size: 2.5em;
       margin: 0;
     }
-    .hero p {
+    .hero-content p {
       font-size: 1.2em;
+      margin: 10px 0;
+    }
+    .hero-buttons a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      border: 2px solid #ff6b6b;
+      border-radius: 8px;
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .hero-buttons a:hover {
+      background: #ff6b6b;
+      color: white;
+    }
+    .hero-photo {
+      text-align: center;
+      margin: 20px;
+    }
+    .hero-photo img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 6px solid #f99;
+    }
+    .hero-photo h3 {
       margin: 10px 0 0;
+    }
+    .hero-tags span {
+      display: inline-block;
+      margin: 5px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: linear-gradient(to right, #f99, #6cf);
+      color: white;
+      font-weight: bold;
     }
     section {
       max-width: 900px;
@@ -67,13 +120,6 @@
       color: #1976d2;
       border-bottom: 2px solid #1976d2;
       padding-bottom: 6px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 10px;
     }
     .project-grid {
       display: grid;
@@ -96,45 +142,50 @@
       text-decoration: none;
       color: #1976d2;
     }
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background: #424242;
+    .cert-list {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1976d2;
       color: white;
-      padding: 6px 12px;
+    }
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-form {
+      flex: 1;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .contact-form button {
+      background: linear-gradient(to right, #f99, #6cf);
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
       border-radius: 6px;
       cursor: pointer;
     }
-    #scrollTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 40px;
-      right: 20px;
-      z-index: 999;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: #1976d2;
-      color: white;
-      cursor: pointer;
-      padding: 12px 16px;
-      border-radius: 50%;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    }
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.8em;
-      }
-      .theme-toggle {
-        left: 10px;
-      }
-      nav {
+    @media (max-width: 768px) {
+      .hero {
         flex-direction: column;
-        align-items: flex-start;
       }
-      nav a {
-        margin: 10px 0 0;
+      .contact-grid {
+        flex-direction: column;
       }
     }
   </style>
@@ -142,105 +193,6 @@
 <body>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1000 });</script>
-<div class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</div>
-<nav>
-  <div style="font-weight: bold; font-size: 20px;">Dhrumil Soni</div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-<section class="hero">
-  <h1>Hi, I'm Dhrumil Soni 👋</h1>
-  <p>Lead QA Automation Test Engineer</p>
-  <p>Selenium| Playwright | WebdriverIO</p>
-</section>
-<section id="about">
-  <h2>About Me</h2>
-  <p>Seasoned QA Engineer with 10+ years of experience in manual and automation testing. Expert in creating end-to-end automation frameworks using Playwright, WebdriverIO, and CI/CD tools. Passionate about delivering bug-free applications and sharing QA knowledge.</p>
-</section>
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <a href="https://www.deposyt.com" target="_blank">
-        <img src="assets/deposyt.png" alt="Deposyt Logo">
-        <h3>Deposyt</h3>
-      </a>
-      <p>CMS + Payment Gateway testing manually</p>
-    </div>
-    <div class="project-card">
-      <a href="https://www.hometownticketing.com/" target="_blank">
-        <img src="assets/hometown.png" alt="Hometown Logo">
-        <h3>Hometown Website Builder</h3>
-      </a>
-      <p>Ticketing + CMS automation using Playwright + TS</p>
-    </div>
-    <div class="project-card">
-      <a href="https://www.tlynt.com/" target="_blank">
-        <img src="assets/tlynt.png" alt="TLYNT Logo">
-        <h3>TLYNT</h3>
-      </a>
-      <p>Media automation using WebdriverIO</p>
-    </div>
-    <div class="project-card">
-      <a href="https://veriday.com/" target="_blank">
-        <img src="assets/veriday.png" alt="Veriday Logo">
-        <h3>Digital Agent (Veriday)</h3>
-      </a>
-      <p>CMS automation, framework migration, Cucumber + Jenkins</p>
-    </div>
-    <div class="project-card">
-      <a href="https://dividebuy.co.uk/" target="_blank">
-        <img src="assets/dividebuy.png" alt="DivideBuy Logo">
-        <h3>DivideBuy</h3>
-      </a>
-      <p>Fintech manual + automation testing with microservices</p>
-    </div>
-    <div class="project-card">
-      <a href="https://www.splunk.com/" target="_blank">
-        <img src="assets/splunk.png" alt="Splunk Logo">
-        <h3>Splunk Add-Ons</h3>
-      </a>
-      <p>15+ add-ons tested, SNOW, MSCS, Office365, etc.</p>
-    </div>
-    <div class="project-card">
-      <a href="https://www.att.com/" target="_blank">
-        <img src="assets/att.png" alt="AT&T Logo">
-        <h3>AT&T HALO</h3>
-      </a>
-      <p>Telecom E2E test design and backend validation</p>
-    </div>
-  </div>
-</section>
-<section id="certifications">
-  <h2>Certifications & Awards</h2>
-  <ul>
-    <li>🏆 BRAVO Award – Test Execution & Automation</li>
-    <li>🏅 POB Award – Planning & Delivery Excellence</li>
-    <li>⭐ KUDOS Award – Splunk Add-On Delivery</li>
-    <li>📜 AWS Certified AI Practitioner</li>
-  </ul>
-</section>
-<section id="resume">
-  <h2>Resume</h2>
-  <p>You can download my resume here:</p>
-  <a href="resume/Dhrumil_Soni_Resume.pdf" download class="btn">⬇️ Download Resume</a>
-</section>
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
-  <p>Phone: +91-9727772090</p>
-  <p>
-    <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank"><i class="fab fa-linkedin"></i></a>
-    &nbsp;
-    <a href="https://github.com/dhrumil-soni-th" target="_blank"><i class="fab fa-github"></i></a>
-  </p>
-</section>
-<button id="scrollTopBtn" title="Go to top">⬆️</button>
 <script>
   function toggleTheme() {
     const root = document.documentElement;
@@ -249,13 +201,144 @@
     root.style.setProperty('--text-color', darkMode ? '#000000' : '#ffffff');
     root.style.setProperty('--card-bg', darkMode ? '#333' : '#e3f2fd');
   }
-  const scrollBtn = document.getElementById("scrollTopBtn");
-  window.onscroll = function () {
-    scrollBtn.style.display = document.documentElement.scrollTop > 200 ? "block" : "none";
-  };
-  scrollBtn.addEventListener("click", function () {
-    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+  window.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollY >= sectionTop - 60) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
   });
 </script>
+
+<nav>
+  <div style="font-weight: bold; font-size: 20px;">Dhrumil Soni</div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications & Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Hi, I'm Dhrumil Soni 👋</h1>
+    <p>Lead Quality Analyst and Automation Test Engineer.</p>
+    <p>Crafting Quality Through Code & Context-Driven Testing Excellence</p>
+    <div class="hero-buttons">
+      <a href="#contact">📩 Get In Touch</a>
+      <a href="resume/Dhrumil_Soni_Resume.pdf" download>📄 Resume</a>
+    </div>
+    <div style="margin-top: 10px;">
+      <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+      &nbsp;
+      <a href="https://github.com/dhrumil-soni-th" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="assets/dhrumil.jpg" alt="Dhrumil Soni">
+    <h3>Dhrumil Soni</h3>
+    <p>Lead QA Automation Test Engineer at Tech Holding</p>
+    <div class="hero-tags">
+      <span>Playwright Expert</span>
+      <span>WebDriverIO</span>
+      <span>API Testing</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Seasoned QA Engineer with 10+ years of experience in manual and automation testing. Expert in creating end-to-end automation frameworks using Playwright, WebdriverIO, and CI/CD tools. Passionate about delivering bug-free applications and sharing QA knowledge.</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="assets/hometown.png" alt="Hometown Logo">
+      <h3>Hometown Website Builder</h3>
+      <p>Ticketing + CMS automation using Playwright + TS</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/tlynt.png" alt="TLYNT Logo">
+      <h3>TLYNT</h3>
+      <p>Media automation using WebdriverIO</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/deposyt.png" alt="Deposyt Logo">
+      <h3>Deposyt</h3>
+      <p>CMS + Payment Gateway testing manually</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/veriday.png" alt="Veriday Logo">
+      <h3>Digital Agent (Veriday)</h3>
+      <p>CMS automation, framework migration, Cucumber + Jenkins</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/dividebuy.png" alt="DivideBuy Logo">
+      <h3>DivideBuy</h3>
+      <p>Fintech manual + automation testing with microservices</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/splunk.png" alt="Splunk Logo">
+      <h3>Splunk Add-Ons</h3>
+      <p>15+ add-ons tested, SNOW, MSCS, Office365, etc.</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/att.png" alt="AT&T Logo">
+      <h3>AT&T HALO</h3>
+      <p>Telecom E2E test design and backend validation</p>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2>Certifications & Awards</h2>
+  <ul class="cert-list">
+    <li>🏆 BRAVO Award – Test Execution & Automation</li>
+    <li>🏅 POB Award – Planning & Delivery Excellence</li>
+    <li>⭐ KUDOS Award – Splunk Add-On Delivery</li>
+    <li><img src="assets/aws.png" alt="AWS" style="height: 20px; vertical-align: middle;" /> AWS Certified AI Practitioner</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <p>Let's work together</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p><strong><i class="fas fa-envelope"></i> Email</strong><br><a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
+      <p><strong><i class="fas fa-phone"></i> Phone</strong><br><a href="tel:+919727772090">+91 9727772090</a></p>
+      <p><strong><i class="fas fa-map-marker-alt"></i> Location</strong><br>Ahmedabad, Gujarat</p>
+    </div>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject">
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Dhrumil Soni. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
