@@ -133,6 +133,18 @@
       gap: 20px;
       justify-content: space-between;
     }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Adjust as needed for spacing between icon and text */
+      margin-bottom: 20px; /* Keep your existing margin-bottom */
+    }
+    .contact-item h4 {
+      margin: 0; /* Remove default margin from heading */
+    }
+    .contact-item p {
+      margin: 0; /* Remove default margin from paragraph */
+    }
     .contact-info {
       flex: 1;
     }
@@ -358,7 +370,7 @@ modules of the applications involved in the End-to-End flow</li>
 <!-- Contact Section -->
 <section id="contact" class="contact" style="padding: 60px 20px; background-color: #f8f9fa;">
   <div class="container" style="max-width: 1000px; margin: auto;">
-    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+    <div class="section-header" style="margin-bottom: 40px;">
       <h2 class="section-title" style="font-size: 2.2em; color: #1976d2;">Get In Touch</h2>
       <p class="section-subtitle" style="font-size: 1.1em; color: #555;">Let's work together</p>
     </div>
@@ -366,14 +378,14 @@ modules of the applications involved in the End-to-End flow</li>
     <div class="contact-content" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
       <!-- Contact Info -->
       <div class="contact-info" style="flex: 1; min-width: 280px;">
-        <div class="contact-item" style="margin-bottom: 20px;">
+        <div class="contact-item">
           <i class="fas fa-envelope" style="color: #1976d2; font-size: 18px;"></i>
           <div>
             <h4>Email</h4>
             <p><a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
           </div>
         </div>
-        <div class="contact-item" style="margin-bottom: 20px;">
+        <div class="contact-item">
           <i class="fas fa-phone" style="color: #1976d2; font-size: 18px;"></i>
           <div>
             <h4>Phone</h4>
@@ -388,6 +400,8 @@ modules of the applications involved in the End-to-End flow</li>
           </div>
         </div>
       </div>
+
+      
 
       <!-- Contact Form -->
       <form
