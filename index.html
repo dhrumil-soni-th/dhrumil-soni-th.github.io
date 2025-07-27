@@ -354,28 +354,73 @@ modules of the applications involved in the End-to-End flow</li>
     <li><img src="assets/aws.png" alt="AWS" style="height: 20px; vertical-align: middle;" /> AWS Certified AI Practitioner</li>
   </ul>
 </section>
-<section id="contact">
-  <h2>Get In Touch</h2>
-  <p>Let's work together</p>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <p><strong><i class="fas fa-envelope"></i> Email</strong><br><a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
-      <p><strong><i class="fas fa-phone"></i> Phone</strong><br><a href="tel:+919727772090">+91 9727772090</a></p>
-      <p><strong><i class="fas fa-map-marker-alt"></i> Location</strong><br>Ahmedabad, Gujarat</p>
+
+<!-- Contact Section -->
+<section id="contact" class="contact" style="padding: 60px 20px; background-color: #f8f9fa;">
+  <div class="container" style="max-width: 1000px; margin: auto;">
+    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+      <h2 class="section-title" style="font-size: 2.2em; color: #1976d2;">Get In Touch</h2>
+      <p class="section-subtitle" style="font-size: 1.1em; color: #555;">Let's work together</p>
     </div>
-    <div class="contact-form">
-      <form action="https://formsubmit.co/ajax/dksoni0812@gmail.com" method="POST" id="contactForm">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="text" name="subject" placeholder="Subject">
-          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+
+    <div class="contact-content" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+      <!-- Contact Info -->
+      <div class="contact-info" style="flex: 1; min-width: 280px;">
+        <div class="contact-item" style="margin-bottom: 20px;">
+          <i class="fas fa-envelope" style="color: #1976d2; font-size: 18px;"></i>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item" style="margin-bottom: 20px;">
+          <i class="fas fa-phone" style="color: #1976d2; font-size: 18px;"></i>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+919727772090">+91 9727772090</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt" style="color: #1976d2; font-size: 18px;"></i>
+          <div>
+            <h4>Location</h4>
+            <p>Ahmedabad, Gujarat</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form
+        class="contact-form"
+        action="https://formsubmit.co/ajax/dksoni0812@gmail.com"
+        method="POST"
+        id="contactForm"
+        style="flex: 1; min-width: 280px;"
+      >
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="subject" placeholder="Subject" />
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full-width">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <div class="success-message" id="formMessage" style="display: none; margin-top: 15px; background: #e0ffe0; padding: 10px; border: 1px solid #4caf50; color: #2e7d32; border-radius: 4px;">
+          Your message sent successfully. Stay tuned!
+        </div>
       </form>
-      <div class="success-message" id="formMessage">Your message sent successfully. Stay tuned!</div>
     </div>
   </div>
 </section>
+
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -403,24 +448,24 @@ modules of the applications involved in the End-to-End flow</li>
     </div>
 </footer>
 <script>
-    document.getElementById('contactForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
+  document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
 
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        form.reset();
-        document.getElementById('formMessage').style.display = 'block';
-      }
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: 'application/json',
+      },
     });
+
+    if (response.ok) {
+      form.reset();
+      document.getElementById('formMessage').style.display = 'block';
+    }
+  });
 </script>
 </body>
 </html>
