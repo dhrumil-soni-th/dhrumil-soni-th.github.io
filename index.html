@@ -7,11 +7,10 @@
   <meta property="og:title" content="Dhrumil Soni - Lead QA & Context Driven Tester" />
   <meta property="og:image" content="https://dhrumil-soni-th.github.io/assets/preview.png" />
   <meta property="og:url" content="https://dhrumil-soni-th.github.io" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <title>Dhrumil Soni - QA Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="icon" href="favicon.ico" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -25,6 +24,7 @@
       padding: 50px 0;
       background-color: #1976d2;
       color: white;
+      position: relative;
     }
     h1 {
       font-size: 2.5em;
@@ -104,13 +104,12 @@
 </head>
 <body>
 
-<script>
-  AOS.init({ duration: 1000 });
-</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000 });</script>
 
 <div class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</div>
 
-<header data-aos="fade-down" style="position: relative;">
+<header data-aos="fade-down">
   <h1>Dhrumil Soni</h1>
   <p>Sr. QA Engineer (Manual + Automation)</p>
   <p>Ahmedabad, Gujarat</p>
@@ -127,37 +126,16 @@
 </header>
 
 <section data-aos="fade-up">
-  <h2>About Me</h2>
-  <p>Seasoned QA Engineer with 10+ years of experience in Manual and Automation testing across domains like media, healthcare, fintech, telecom, and data analytics. Skilled in building robust automation frameworks using Playwright and WebdriverIO. Adept at team leadership, mentoring, and stakeholder demos. Passionate about improving quality through smart test planning and reducing regression cycles via automation.</p>
-</section>
-
-<section data-aos="fade-up">
-  <h2>Resume</h2>
-  <p>You can download my resume using the button below:</p>
-  <a href="resume/Dhrumil_Soni_Resume.pdf" download class="btn">⬇️ Download Resume</a>
-</section>
-
-<section data-aos="fade-up">
-  <h2>Certifications & Awards</h2>
-  <ul>
-    <li>🏆 BRAVO Award (2×) – Test Execution & Sales Platform Automation</li>
-    <li>🏅 POB Award – Planning & Delivery Excellence</li>
-    <li>⭐ KUDOS Award – Splunk Add-On Delivery</li>
-    <li><img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS" width="25" style="vertical-align:middle; margin-right:8px;"> AWS Certified AI Practitioner</li>
-  </ul>
-</section>
-
-<section data-aos="fade-up">
   <h2>Projects</h2>
   <div class="project-grid">
     <div class="project-card">
       <img src="assets/hometown.png" alt="Hometown Logo">
-      <h3><a href="#" target="_blank">Hometown Website Builder</a></h3>
+      <h3>Hometown Website Builder</h3>
       <p>Ticketing + CMS automation using Playwright + TS</p>
     </div>
     <div class="project-card">
       <img src="assets/tlynt.png" alt="TLYNT Logo">
-      <h3><a href="#" target="_blank">TLYNT</a></h3>
+      <h3>TLYNT</h3>
       <p>Media automation using WebdriverIO</p>
     </div>
     <div class="project-card">
@@ -165,7 +143,26 @@
       <h3><a href="https://www.deposyt.com" target="_blank">Deposyt</a></h3>
       <p>CMS + Payment Gateway testing manually</p>
     </div>
-    <!-- Add more cards similarly -->
+    <div class="project-card">
+      <img src="assets/veriday.png" alt="Veriday Logo">
+      <h3>Digital Agent (Veriday)</h3>
+      <p>CMS automation, framework migration, Cucumber + Jenkins</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/dividebuy.png" alt="DivideBuy Logo">
+      <h3>DivideBuy</h3>
+      <p>Fintech manual + automation testing with microservices</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/splunk.png" alt="Splunk Logo">
+      <h3>Splunk Add-Ons</h3>
+      <p>15+ add-ons tested, SNOW, MSCS, Office365, etc.</p>
+    </div>
+    <div class="project-card">
+      <img src="assets/att.png" alt="AT&T Logo">
+      <h3>AT&T HALO</h3>
+      <p>Telecom E2E test design and backend validation</p>
+    </div>
   </div>
 </section>
 
