@@ -60,10 +60,11 @@
       background: #f8f9fa;
       color: #333;
     }
-    .hero-content {
-      max-width: 500px;
-      text-align: left;
-      margin: 20px;
+    .hero-content, .hero-photo {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px;
+      box-sizing: border-box;
     }
     .hero-content h1 {
       font-size: 2.5em;
@@ -87,18 +88,11 @@
       background: #ff6b6b;
       color: white;
     }
-    .hero-photo {
-      text-align: center;
-      margin: 20px;
-    }
     .hero-photo img {
       width: 200px;
       height: 200px;
       border-radius: 50%;
       border: 6px solid #f99;
-    }
-    .hero-photo h3 {
-      margin: 10px 0 0;
     }
     .hero-tags span {
       display: inline-block;
@@ -110,20 +104,15 @@
       font-weight: bold;
     }
     section {
-      max-width: 900px;
+      max-width: 960px;
       margin: 40px auto;
       background: #f8f9fa;
       padding: 20px;
       border-radius: 10px;
     }
-    h2 {
-      color: #1976d2;
-      border-bottom: 2px solid #1976d2;
-      padding-bottom: 6px;
-    }
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
     .project-card {
@@ -137,19 +126,6 @@
       height: 80px;
       object-fit: contain;
       margin-bottom: 10px;
-    }
-    .project-card a {
-      text-decoration: none;
-      color: #1976d2;
-    }
-    .cert-list {
-      padding-left: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1976d2;
-      color: white;
     }
     .contact-grid {
       display: flex;
@@ -180,6 +156,12 @@
       border-radius: 6px;
       cursor: pointer;
     }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1976d2;
+      color: white;
+    }
     @media (max-width: 768px) {
       .hero {
         flex-direction: column;
@@ -194,13 +176,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1000 });</script>
 <script>
-  function toggleTheme() {
-    const root = document.documentElement;
-    const darkMode = root.style.getPropertyValue('--bg-color') === '#121212';
-    root.style.setProperty('--bg-color', darkMode ? '#ffffff' : '#121212');
-    root.style.setProperty('--text-color', darkMode ? '#000000' : '#ffffff');
-    root.style.setProperty('--card-bg', darkMode ? '#333' : '#e3f2fd');
-  }
   window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a');
@@ -220,7 +195,6 @@
     });
   });
 </script>
-
 <nav>
   <div style="font-weight: bold; font-size: 20px;">Dhrumil Soni</div>
   <div>
@@ -231,7 +205,6 @@
     <a href="#contact">Contact</a>
   </div>
 </nav>
-
 <section id="home" class="hero">
   <div class="hero-content">
     <h1>Hi, I'm Dhrumil Soni 👋</h1>
@@ -258,12 +231,10 @@
     </div>
   </div>
 </section>
-
 <section id="about">
   <h2>About Me</h2>
   <p>Seasoned QA Engineer with 10+ years of experience in manual and automation testing. Expert in creating end-to-end automation frameworks using Playwright, WebdriverIO, and CI/CD tools. Passionate about delivering bug-free applications and sharing QA knowledge.</p>
 </section>
-
 <section id="projects">
   <h2>Projects</h2>
   <div class="project-grid">
@@ -318,7 +289,6 @@
     </div>
   </div>
 </section>
-
 <section id="certifications">
   <h2>Certifications & Awards</h2>
   <ul class="cert-list">
@@ -328,7 +298,6 @@
     <li><img src="assets/aws.png" alt="AWS" style="height: 20px; vertical-align: middle;" /> AWS Certified AI Practitioner</li>
   </ul>
 </section>
-
 <section id="contact">
   <h2>Get In Touch</h2>
   <p>Let's work together</p>
@@ -349,10 +318,8 @@
     </div>
   </div>
 </section>
-
 <footer>
   <p>© 2025 Dhrumil Soni. All rights reserved.</p>
 </footer>
-
 </body>
 </html>
