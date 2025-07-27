@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhrumil Soni - QA Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pV+zVAVIJrBZnWxUbdEkGb0uZyNkEyDXRhGEV4OQoXYc1iFv7YdOC5HOeFIVbZs7jsMEZTWVJqZg5w1hTyd6CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     :root {
       --primary-color: #1e88e5;
@@ -18,7 +23,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -29,53 +38,79 @@
     }
 
     header {
-      background: var(--primary-color);
+      background: linear-gradient(to right, var(--primary-color), var(--accent-color));
       color: var(--white);
       text-align: center;
-      padding: 40px 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
+      padding: 60px 20px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 600;
     }
 
     header p,
     header a {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #e3f2fd;
       margin-top: 8px;
     }
 
     section {
       background: var(--white);
-      padding: 25px;
-      margin-bottom: 20px;
-      border-left: 5px solid var(--primary-color);
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     section h2 {
-      color: var(--accent-color);
-      margin-bottom: 15px;
-      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      margin-top: 8px;
     }
 
     section h3 {
-      color: var(--primary-color);
-      margin-top: 15px;
+      color: var(--accent-color);
+      margin-top: 20px;
     }
 
     ul {
-      list-style-type: disc;
-      margin-left: 20px;
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: '\f111';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 10px;
+      color: var(--primary-color);
+    }
+
+    ul li {
       margin-bottom: 10px;
+      font-size: 1rem;
     }
 
     a {
-      color: var(--accent-color);
+      color: var(--white);
       text-decoration: none;
     }
 
@@ -85,18 +120,17 @@
 
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       background: #e3f2fd;
-      margin-top: 30px;
-      border-radius: 8px;
+      margin-top: 40px;
+      border-radius: 12px;
       color: #555;
     }
 
     @media (max-width: 768px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
-
       section {
         padding: 20px;
       }
@@ -104,83 +138,90 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Dhrumil Soni</h1>
-    <p>Sr. QA Engineer (Manual + Automation)</p>
-    <p>Ahmedabad, Gujarat</p>
-    <p>Email: <a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
-    <p>Phone: +91-9727772090</p>
-    <p>
-      <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/dhrumil-soni-th" target="_blank">GitHub</a>
-    </p>
-  </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Seasoned QA Engineer with 10+ years of experience in Manual and Automation testing across domains like media, healthcare, fintech, telecom, and data analytics. Skilled in building robust automation frameworks using Playwright and WebdriverIO. Adept at team leadership, mentoring, and stakeholder demos. Passionate about improving quality through smart test planning and reducing regression cycles via automation.</p>
-  </section>
+<!-- AOS Animation Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000 });
+</script>
 
-  <section>
-    <h2>Skills</h2>
-    <h3>Testing Tools & Frameworks</h3>
-    <ul>
-      <li>Playwright (TS), WebdriverIO, Selenium, Cucumber</li>
-      <li>Postman, SOAP UI, TestRail, JIRA, QATouch, Zebrunner</li>
-    </ul>
-    <h3>Testing Types</h3>
-    <ul>
-      <li>Manual Testing, Functional, GUI, Regression, UAT</li>
-      <li>API Testing, System, Compatibility, Ad-hoc</li>
-    </ul>
-    <h3>Soft Skills</h3>
-    <ul>
-      <li>Team leadership & mentoring</li>
-      <li>Client communication</li>
-      <li>Test strategy & planning</li>
-      <li>Interviewing candidates</li>
-    </ul>
-  </section>
+<header data-aos="fade-down">
+  <h1>Dhrumil Soni</h1>
+  <p>Sr. QA Engineer (Manual + Automation)</p>
+  <p>Ahmedabad, Gujarat</p>
+  <p>Email: <a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
+  <p>Phone: +91-9727772090</p>
+  <p>
+    <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/dhrumil-soni-th" target="_blank">GitHub</a>
+  </p>
+</header>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Hometown Website Builder:</strong> Ticketing + CMS automation using Playwright + TS</li>
-      <li><strong>TLYNT:</strong> Media automation using WebdriverIO</li>
-      <li><strong>Deposyt:</strong> CMS + Payment Gateway testing manually</li>
-      <li><strong>Digital Agent (Veriday):</strong> CMS automation, framework migration, Cucumber + Jenkins</li>
-      <li><strong>DivideBuy:</strong> Fintech manual + automation testing with microservices</li>
-      <li><strong>Splunk Add-Ons:</strong> 15+ add-ons tested, SNOW, MSCS, Office365, etc.</li>
-      <li><strong>AT&T HALO:</strong> Telecom E2E test design and backend validation</li>
-    </ul>
-  </section>
+<section data-aos="fade-up">
+  <h2>About Me</h2>
+  <p>Seasoned QA Engineer with 10+ years of experience in Manual and Automation testing across domains like media, healthcare, fintech, telecom, and data analytics. Skilled in building robust automation frameworks using Playwright and WebdriverIO. Adept at team leadership, mentoring, and stakeholder demos. Passionate about improving quality through smart test planning and reducing regression cycles via automation.</p>
+</section>
 
-  <section>
-    <h2>Certifications & Awards</h2>
-    <ul>
-      <li>🏆 BRAVO Award (2×) – Test Execution & Sales Platform Automation</li>
-      <li>🏅 POB Award – Planning & Delivery Excellence</li>
-      <li>⭐ KUDOS Award – Splunk Add-On Delivery</li>
-    </ul>
-  </section>
+<section data-aos="fade-up">
+  <h2>Skills</h2>
+  <h3>Testing Tools & Frameworks</h3>
+  <ul>
+    <li>Playwright (TS), WebdriverIO, Selenium, Cucumber</li>
+    <li>Postman, SOAP UI, TestRail, JIRA, QATouch, Zebrunner</li>
+  </ul>
+  <h3>Testing Types</h3>
+  <ul>
+    <li>Manual Testing, Functional, GUI, Regression, UAT</li>
+    <li>API Testing, System, Compatibility, Ad-hoc</li>
+  </ul>
+  <h3>Soft Skills</h3>
+  <ul>
+    <li>Team leadership & mentoring</li>
+    <li>Client communication</li>
+    <li>Test strategy & planning</li>
+    <li>Interviewing candidates</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li>B.E in Electronics & Communication – LDRP, Gandhinagar (82.40%)</li>
-      <li>12th: 87.36% (GSEB) | 10th: 91.85% (GSEB)</li>
-    </ul>
-  </section>
+<section data-aos="zoom-in">
+  <h2>Projects</h2>
+  <ul>
+    <li><strong>Hometown Website Builder:</strong> Ticketing + CMS automation using Playwright + TS</li>
+    <li><strong>TLYNT:</strong> Media automation using WebdriverIO</li>
+    <li><strong>Deposyt:</strong> CMS + Payment Gateway testing manually</li>
+    <li><strong>Digital Agent (Veriday):</strong> CMS automation, framework migration, Cucumber + Jenkins</li>
+    <li><strong>DivideBuy:</strong> Fintech manual + automation testing with microservices</li>
+    <li><strong>Splunk Add-Ons:</strong> 15+ add-ons tested, SNOW, MSCS, Office365, etc.</li>
+    <li><strong>AT&T HALO:</strong> Telecom E2E test design and backend validation</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Personal Info</h2>
-    <p><strong>Date of Birth:</strong> 08 Dec 1991</p>
-    <p><strong>Languages:</strong> English, Hindi, Gujarati</p>
-    <p><strong>Hobbies:</strong> Cricket, Trekking, Reading, Cycling</p>
-  </section>
+<section data-aos="fade-up">
+  <h2>Certifications & Awards</h2>
+  <ul>
+    <li>🏆 BRAVO Award (2×) – Test Execution & Sales Platform Automation</li>
+    <li>🏅 POB Award – Planning & Delivery Excellence</li>
+    <li>⭐ KUDOS Award – Splunk Add-On Delivery</li>
+  </ul>
+</section>
 
-  <footer>
-    <p>© 2025 Dhrumil Soni | QA Portfolio</p>
-  </footer>
+<section data-aos="fade-up">
+  <h2>Education</h2>
+  <ul>
+    <li>B.E in Electronics & Communication – LDRP, Gandhinagar (82.40%)</li>
+    <li>12th: 87.36% (GSEB) | 10th: 91.85% (GSEB)</li>
+  </ul>
+</section>
+
+<section data-aos="fade-up">
+  <h2>Personal Info</h2>
+  <p><strong>Date of Birth:</strong> 08 Dec 1991</p>
+  <p><strong>Languages:</strong> English, Hindi, Gujarati</p>
+  <p><strong>Hobbies:</strong> Cricket, Trekking, Reading, Cycling</p>
+</section>
+
+<footer data-aos="fade-up">
+  <p>© 2025 Dhrumil Soni | QA Portfolio</p>
+</footer>
 </body>
 </html>
