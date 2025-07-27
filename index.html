@@ -156,6 +156,15 @@
       border-radius: 6px;
       cursor: pointer;
     }
+    .success-message {
+      background-color: #e0ffe0;
+      color: #2e7d32;
+      border: 1px solid #81c784;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+      display: none;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -330,18 +339,40 @@ modules of the applications involved in the End-to-End flow</li>
       <p><strong><i class="fas fa-map-marker-alt"></i> Location</strong><br>Ahmedabad, Gujarat</p>
     </div>
     <div class="contact-form">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject">
-        <textarea rows="4" placeholder="Your Message"></textarea>
-        <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+      <form action="https://formsubmit.co/ajax/dksoni0812@gmail.com" method="POST" id="contactForm">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject">
+          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
       </form>
+      <div class="success-message" id="formMessage">Your message sent successfully. Stay tuned!</div>
     </div>
   </div>
 </section>
 <footer>
   <p>© 2025 Dhrumil Soni. All rights reserved.</p>
 </footer>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        document.getElementById('formMessage').style.display = 'block';
+      }
+    });
+</script>
 </body>
 </html>
