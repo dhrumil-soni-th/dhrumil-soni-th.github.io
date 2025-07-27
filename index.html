@@ -23,18 +23,38 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       margin: 0;
-      padding: 0 20px;
+      padding: 0;
     }
-    header {
-      text-align: center;
-      padding: 50px 0;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
       background-color: #1976d2;
       color: white;
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    h1 {
-      font-size: 2.5em;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: #1976d2;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 3em;
       margin: 0;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin: 10px 0 0;
     }
     section {
       max-width: 900px;
@@ -103,120 +123,131 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
     @media (max-width: 600px) {
-      header h1 {
+      .hero h1 {
         font-size: 1.8em;
       }
       .theme-toggle {
         left: 10px;
       }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin: 10px 0 0;
+      }
     }
   </style>
 </head>
 <body>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1000 });</script>
-
 <div class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</div>
-
-<header data-aos="fade-down">
-  <h1>Dhrumil Soni</h1>
-  <p>Sr. QA Engineer (Manual + Automation)</p>
-  <p>Ahmedabad, Gujarat</p>
-  <p>Email: <a href="mailto:dksoni0812@gmail.com" style="color:white;">dksoni0812@gmail.com</a></p>
-  <p>Phone: +91-9727772090</p>
-  <div style="position:absolute; top:20px; right:20px; display:flex; gap:12px;">
-    <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank" aria-label="LinkedIn">
-      <i class="fab fa-linkedin fa-2x" style="color:#fff;"></i>
-    </a>
-    <a href="https://github.com/dhrumil-soni-th" target="_blank" aria-label="GitHub">
-      <i class="fab fa-github fa-2x" style="color:#fff;"></i>
-    </a>
+<nav>
+  <div style="font-weight: bold; font-size: 20px;">Dhrumil Soni</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
   </div>
-</header>
-
-<section data-aos="fade-up">
-  <h2>Resume</h2>
-  <p>You can download my resume using the button below:</p>
-  <a href="resume/Dhrumil_Soni_Resume.pdf" download class="btn">⬇️ Download Resume</a>
+</nav>
+<section class="hero">
+  <h1>Hi, I'm Dhrumil 👋</h1>
+  <p>Lead QA | Playwright | WebdriverIO | DevTools Ninja</p>
 </section>
-
-<section data-aos="fade-up">
-  <h2>Certifications & Awards</h2>
-  <ul>
-    <li>🏆 BRAVO Award (2×) – Test Execution & Sales Platform Automation</li>
-    <li>🏅 POB Award – Planning & Delivery Excellence</li>
-    <li>⭐ KUDOS Award – Splunk Add-On Delivery</li>
-    <li><img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS" width="25" style="vertical-align:middle; margin-right:8px;"> AWS Certified AI Practitioner</li>
-  </ul>
+<section id="about">
+  <h2>About Me</h2>
+  <p>Seasoned QA Engineer with 10+ years of experience in manual and automation testing. Expert in creating end-to-end solutions using Playwright, WebdriverIO, and Jenkins. Passionate about delivering bug-free applications and sharing QA knowledge.</p>
 </section>
-
-<section data-aos="fade-up">
+<section id="projects">
   <h2>Projects</h2>
   <div class="project-grid">
     <div class="project-card">
-      <a href="https://www.hometownticketing.com" target="_blank">
-        <img src="assets/hometown.png" alt="Hometown Logo">
-        <h3 style="color: var(--text-color);">Hometown Website Builder</h3>
-      </a>
-      <p>Ticketing + CMS automation using Playwright + TS</p>
-    </div>
-    <div class="project-card">
-      <a href="https://www.tlynt.com" target="_blank">
-        <img src="assets/tlynt.png" alt="TLYNT Logo">
-        <h3 style="color: var(--text-color);">TLYNT</h3>
-      </a>
-      <p>Media automation using WebdriverIO</p>
-    </div>
-    <div class="project-card">
       <a href="https://www.deposyt.com" target="_blank">
         <img src="assets/deposyt.png" alt="Deposyt Logo">
-        <h3 style="color: var(--text-color);">Deposyt</h3>
+        <h3>Deposyt</h3>
       </a>
       <p>CMS + Payment Gateway testing manually</p>
     </div>
     <div class="project-card">
-      <a href="https://www.veriday.com" target="_blank">
+      <a href="#" target="_blank">
+        <img src="assets/hometown.png" alt="Hometown Logo">
+        <h3>Hometown Website Builder</h3>
+      </a>
+      <p>Ticketing + CMS automation using Playwright + TS</p>
+    </div>
+    <div class="project-card">
+      <a href="#" target="_blank">
+        <img src="assets/tlynt.png" alt="TLYNT Logo">
+        <h3>TLYNT</h3>
+      </a>
+      <p>Media automation using WebdriverIO</p>
+    </div>
+    <div class="project-card">
+      <a href="#" target="_blank">
         <img src="assets/veriday.png" alt="Veriday Logo">
-        <h3 style="color: var(--text-color);">Digital Agent (Veriday)</h3>
+        <h3>Digital Agent (Veriday)</h3>
       </a>
       <p>CMS automation, framework migration, Cucumber + Jenkins</p>
     </div>
     <div class="project-card">
-      <a href="https://www.dividebuy.co.uk" target="_blank">
+      <a href="#" target="_blank">
         <img src="assets/dividebuy.png" alt="DivideBuy Logo">
-        <h3 style="color: var(--text-color);">DivideBuy</h3>
+        <h3>DivideBuy</h3>
       </a>
       <p>Fintech manual + automation testing with microservices</p>
     </div>
     <div class="project-card">
-      <a href="https://www.splunk.com" target="_blank">
+      <a href="#" target="_blank">
         <img src="assets/splunk.png" alt="Splunk Logo">
-        <h3 style="color: var(--text-color);">Splunk Add-Ons</h3>
+        <h3>Splunk Add-Ons</h3>
       </a>
       <p>15+ add-ons tested, SNOW, MSCS, Office365, etc.</p>
     </div>
     <div class="project-card">
-      <a href="https://www.att.com" target="_blank">
+      <a href="#" target="_blank">
         <img src="assets/att.png" alt="AT&T Logo">
-        <h3 style="color: var(--text-color);">AT&T HALO</h3>
+        <h3>AT&T HALO</h3>
       </a>
       <p>Telecom E2E test design and backend validation</p>
     </div>
   </div>
 </section>
-
+<section id="certifications">
+  <h2>Certifications & Awards</h2>
+  <ul>
+    <li>🏆 BRAVO Award – Test Execution & Automation</li>
+    <li>🏅 POB Award – Planning & Delivery Excellence</li>
+    <li>⭐ KUDOS Award – Splunk Add-On Delivery</li>
+    <li>📜 AWS Certified AI Practitioner</li>
+  </ul>
+</section>
+<section id="resume">
+  <h2>Resume</h2>
+  <p>You can download my resume here:</p>
+  <a href="resume/Dhrumil_Soni_Resume.pdf" download class="btn">⬇️ Download Resume</a>
+</section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:dksoni0812@gmail.com">dksoni0812@gmail.com</a></p>
+  <p>Phone: +91-9727772090</p>
+  <p>
+    <a href="https://linkedin.com/in/dhrumil-soni-qa812" target="_blank"><i class="fab fa-linkedin"></i></a>
+    &nbsp;
+    <a href="https://github.com/dhrumil-soni-th" target="_blank"><i class="fab fa-github"></i></a>
+  </p>
+</section>
 <button id="scrollTopBtn" title="Go to top">⬆️</button>
-
 <script>
   function toggleTheme() {
     const root = document.documentElement;
-    const isDark = root.style.getPropertyValue('--bg-color') === '#121212';
-    root.style.setProperty('--bg-color', isDark ? '#ffffff' : '#121212');
-    root.style.setProperty('--text-color', isDark ? '#000000' : '#ffffff');
-    root.style.setProperty('--card-bg', isDark ? '#e3f2fd' : '#2c2c2c');
+    const darkMode = root.style.getPropertyValue('--bg-color') === '#121212';
+    root.style.setProperty('--bg-color', darkMode ? '#ffffff' : '#121212');
+    root.style.setProperty('--text-color', darkMode ? '#000000' : '#ffffff');
+    root.style.setProperty('--card-bg', darkMode ? '#333' : '#e3f2fd');
   }
-
   const scrollBtn = document.getElementById("scrollTopBtn");
   window.onscroll = function () {
     scrollBtn.style.display = document.documentElement.scrollTop > 200 ? "block" : "none";
@@ -225,6 +256,5 @@
     document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
   });
 </script>
-
 </body>
 </html>
